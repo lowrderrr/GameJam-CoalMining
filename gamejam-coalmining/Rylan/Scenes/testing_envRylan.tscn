@@ -6,3 +6,4 @@
 
 [node name="MainPlayer" parent="." instance=ExtResource("1_0d0li")]
 position = Vector2(489, 275)
+script = null

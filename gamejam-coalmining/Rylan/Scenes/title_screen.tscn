@@ -1,0 +1,91 @@
+[gd_scene load_steps=7 format=3 uid="uid://djyf72gin0b5q"]
+
+[ext_resource type="Script" path="res://Rylan/Scripts/title_screen.gd" id="1_437r8"]
+[ext_resource type="Texture2D" uid="uid://clhag1j76qao8" path="res://Rylan/Temporary Assets/gamesforlove.png" id="2_8prtx"]
+
+[sub_resource type="Animation" id="Animation_31wio"]
+resource_name = "Fadeinout"
+length = 4.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Foreground:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.5, 2.5, 4),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0), Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_b28cq"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Foreground:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_v6ex4"]
+_data = {
+"Fadeinout": SubResource("Animation_31wio"),
+"RESET": SubResource("Animation_b28cq")
+}
+
+[sub_resource type="SystemFont" id="SystemFont_4sr06"]
+font_names = PackedStringArray("Castellar")
+
+[node name="Title Screen" type="Node2D"]
+script = ExtResource("1_437r8")
+
+[node name="Background" type="ColorRect" parent="."]
+offset_left = -575.0
+offset_top = -322.0
+offset_right = 578.0
+offset_bottom = 328.0
+color = Color(0, 0, 0, 1)
+
+[node name="Gamesforlovelogo" type="Sprite2D" parent="."]
+position = Vector2(0, -150)
+texture = ExtResource("2_8prtx")
+
+[node name="Timer" type="Timer" parent="."]
+
+[node name="IntroAnimation" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_v6ex4")
+}
+
+[node name="Camera" type="Camera2D" parent="."]
+
+[node name="Label" type="Label" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -333.5
+offset_top = 22.0
+offset_right = 333.5
+offset_bottom = 107.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = SubResource("SystemFont_4sr06")
+theme_override_font_sizes/font_size = 70
+text = "Games For Love"
+vertical_alignment = 2
+
+[node name="Foreground" type="ColorRect" parent="."]
+offset_left = -574.0
+offset_top = -322.0
+offset_right = 575.0
+offset_bottom = 325.0
+color = Color(0, 0, 0, 1)
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

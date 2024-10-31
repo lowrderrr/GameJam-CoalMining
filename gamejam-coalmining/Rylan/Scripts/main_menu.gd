@@ -17,7 +17,7 @@ func _ready():
 	quit.button_down.connect(on_quit_pressed)
 
 func on_start_pressed() -> void:
-	get_tree().change_scene_to_file("res://Francis/testing_envFT.tscn")
+	get_tree().change_scene_to_file("res://John/testing_envJT.tscn")
 	
 func on_options_pressed() -> void:
 	get_tree().change_scene_to_file("res://Rylan/Scenes/options_menu.tscn")

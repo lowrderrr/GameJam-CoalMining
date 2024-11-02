@@ -1,8 +1,25 @@
-[gd_scene load_steps=2 format=3 uid="uid://cfen35uwvpqc5"]
+[gd_scene load_steps=3 format=3 uid="uid://cfen35uwvpqc5"]
 
 [ext_resource type="PackedScene" uid="uid://b1dt63tvvif5b" path="res://Objects/main_player.tscn" id="1_bvmws"]
+[ext_resource type="Script" path="res://Nick/dataSaver.gd" id="2_lorn5"]
 
 [node name="TestingEnv" type="Node2D"]
 
 [node name="MainPlayer" parent="." instance=ExtResource("1_bvmws")]
 position = Vector2(489, 275)
+
+[node name="TextEditAutosaveThis" type="TextEdit" parent="."]
+offset_right = 119.0
+offset_bottom = 104.0
+placeholder_text = "saving is experimental"
+script = ExtResource("2_lorn5")
+
+[node name="Button" type="Button" parent="."]
+offset_left = 128.0
+offset_top = 168.0
+offset_right = 240.0
+offset_bottom = 248.0
+text = "Delete all yer data (DANGEROUS PLEASE KEEP YOUR MOUSE AWAY)"
+
+[connection signal="text_changed" from="TextEditAutosaveThis" to="TextEditAutosaveThis" method="_on_text_changed"]
+[connection signal="pressed" from="Button" to="TextEditAutosaveThis" method="_on_button_pressed"]

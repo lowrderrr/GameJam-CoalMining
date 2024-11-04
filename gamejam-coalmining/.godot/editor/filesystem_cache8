@@ -1,58 +1,64 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1730679761
-icon.svg::CompressedTexture2D::698662491883687329::1730067295::1730679612::1::::<><>::
-::res://Assets/::1730679613
-grey tilesTEMP.png::CompressedTexture2D::4270493818368381007::1730679463::1730679612::1::::<><>::
-ground tile.PNG::CompressedTexture2D::4182579107390352685::1730679463::1730679612::1::::<><>::
-profile0.png::CompressedTexture2D::4621975743148847842::1730067295::1730679613::1::::<><>::
-Temp.png::CompressedTexture2D::6141778539371304253::1730679463::1730679612::1::::<><>::
-TempCave.png::CompressedTexture2D::6344665177146954127::1730679463::1730679612::1::::<><>::
-::res://Francis/::1730679463
-LICENSE.txt::TextFile::-1::1730067295::0::1::::<><>::
-mine.tscn::PackedScene::-1::1730679463::0::1::::<><>::
-testing_envFT.tscn::PackedScene::5961849869419099884::1730679152::0::1::::<><>::uid://b1dt63tvvif5b::::res://Objects/main_player.tscn
-::res://John/::1730067295
-LICENSE.txt::TextFile::-1::1730067295::0::1::::<><>::
-testing_envJT.tscn::PackedScene::964945759105219335::1730067295::0::1::::<><>::uid://b1dt63tvvif5b::::res://Objects/main_player.tscn
-::res://MainGame/::1730067295
-LICENSE.txt::TextFile::-1::1730067295::0::1::::<><>::
-::res://Moises/::1730679254
-coal.png::CompressedTexture2D::143709013209286987::1730675530::1730675538::1::::<><>::
-LICENSE.txt::TextFile::-1::1730067295::0::1::::<><>::
-playerinv.tres::Resource/Inv::7259145303671269756::1730675829::0::1::::<><>::res://Moises/inventory/inventory_item.gd<>uid://b8krmx84tm6qq::::res://Moises/inventory/items/coal.tres<>res://Moises/inventory/inventory.gd
-testing_envMoises.tscn::PackedScene::2241511084750283508::1730678229::0::1::::<><>::uid://b1dt63tvvif5b::::res://Objects/main_player.tscn<>uid://cgwfk8egjcn6h::::res://Moises/Tilemap_Flat.png<>uid://dboncelr8oty7::::res://Moises/playerinv.tres<>res://Moises/tile_map_layer.gd<>uid://clkutyep5g50s::::res://Moises/inventory/inv_ui.tscn<>uid://b636jat3n8q5o::::res://Assets/profile0.png
-Tilemap_Flat.png::CompressedTexture2D::5239713922441099449::1730340755::1730669387::1::::<><>::
-tile_map_layer.gd::GDScript::-1::1730679254::0::1::::<>TileMapLayer<>::
-wall tileset.png::CompressedTexture2D::6835977966010323453::1730070276::1730669387::1::::<><>::
-::res://Moises/inventory/::1730679254
-inventory.gd::GDScript::-1::1730679254::0::1::::Inv<>Resource<>::
-inventory_item.gd::GDScript::-1::1730679254::0::1::::InvItem<>Resource<>::
-inv_ui.gd::GDScript::-1::1730679254::0::1::::<>Control<>::
-inv_ui.tscn::PackedScene::5566811962346192332::1730678229::0::1::::<><>::res://Moises/inventory/inv_ui.gd
-::res://Moises/inventory/items/::1730675694
-coal.tres::Resource/InvItem::4724351180051780892::1730675667::0::1::::<><>::res://Moises/inventory/inventory_item.gd<>uid://cbu4pvahclr4::::res://Moises/coal.png
-::res://Nick/::1730679463
-dataSaver.gd::GDScript::-1::1730679463::0::1::::<>TextEdit<>::
-LICENSE.txt::TextFile::-1::1730067295::0::1::::<><>::
-testing_envNick.tscn::PackedScene::5132884027352747434::1730679463::0::1::::<><>::uid://b1dt63tvvif5b::::res://Objects/main_player.tscn<>res://Nick/dataSaver.gd
-::res://Objects/::1730679481
-main_player.gd::GDScript::-1::1730679481::0::1::::<>CharacterBody2D<>::
-main_player.tscn::PackedScene::4218734235005353089::1730679463::0::1::::<><>::uid://b636jat3n8q5o::::res://Assets/profile0.png<>res://Objects/main_player.gd
-::res://Rylan/::1730679463
-::res://Rylan/Scenes/::1730679463
-main_menu.tscn::PackedScene::8919407910447389659::1730679463::0::1::::<><>::res://Rylan/Scripts/main_menu.gd<>uid://b2wjtb7q0ll8x::::res://Rylan/Temporary Assets/cole.png
-options_menu.tscn::PackedScene::879574958472303915::1730679463::0::1::::<><>::
-testing_envRylan.tscn::PackedScene::3863832371233527410::1730679463::0::1::::<><>::uid://b1dt63tvvif5b::::res://Objects/main_player.tscn
-title_screen.tscn::PackedScene::7840868868068939176::1730679463::0::1::::<><>::res://Rylan/Scripts/title_screen.gd<>uid://clhag1j76qao8::::res://Rylan/Temporary Assets/gamesforlove.png
-::res://Rylan/Scripts/::1730679463
-main_menu.gd::GDScript::-1::1730679463::0::1::::<>Control<>::
-title_screen.gd::GDScript::-1::1730679463::0::1::::<>Node2D<>::
-::res://Rylan/Temporary Assets/::1730679613
-cole.png::CompressedTexture2D::4327516258246294541::1730679463::1730679613::1::::<><>::
-gamesforlove.png::CompressedTexture2D::5559381387452738989::1730679463::1730679612::1::::<><>::
-::res://Sparsh/::1730067295
-LICENSE.txt::TextFile::-1::1730067295::0::1::::<><>::
-testing_envSparsh.tscn::PackedScene::679710057767321164::1730067295::0::1::::<><>::uid://b1dt63tvvif5b::::res://Objects/main_player.tscn
-::res://Wethu/::1730067295
-LICENSE.txt::TextFile::-1::1730067295::0::1::::<><>::
-testing_envWethu.tscn::PackedScene::2808427990221435675::1730067295::0::1::::<><>::uid://b1dt63tvvif5b::::res://Objects/main_player.tscn
+::res://::1730683327
+icon.svg::CompressedTexture2D::698662491883687329::1729814025::1730683329::1::::<><>::
+::res://Assets/::1730683306
+grey tilesTEMP.png::CompressedTexture2D::4270493818368381007::1730678928::1730683329::1::::<><>::
+ground tile.PNG::CompressedTexture2D::4182579107390352685::1730678928::1730683329::1::::<><>::
+profile0.png::CompressedTexture2D::4621975743148847842::1714694109::1730683330::1::::<><>::
+Temp.png::CompressedTexture2D::6141778539371304253::1730678928::1730683329::1::::<><>::
+TempCave.png::CompressedTexture2D::6344665177146954127::1730678928::1730683329::1::::<><>::
+::res://Assets/CharacterSprite/::1730683306
+miningleft.png::CompressedTexture2D::6115273843878793568::1730683306::1730683329::1::::<><>::
+miningright.png::CompressedTexture2D::7191738586951038461::1730683306::1730683329::1::::<><>::
+Runningleft.png::CompressedTexture2D::7610111846907372465::1730683306::1730683329::1::::<><>::
+Runningright.png::CompressedTexture2D::6253324831234134327::1730683306::1730683329::1::::<><>::
+walkingdown.png::CompressedTexture2D::6413250416296972303::1730683306::1730683329::1::::<><>::
+walkingup.png::CompressedTexture2D::5205605331367744214::1730683306::1730683329::1::::<><>::
+::res://Francis/::1730683306
+mine.tscn::PackedScene::3166635102854574425::1730683306::0::1::::<><>::uid://b13wn6du8but8::::res://Assets/grey tilesTEMP.png<>uid://b1dt63tvvif5b::::res://Objects/main_player.tscn
+testing_envFT.tscn::PackedScene::5961849869419099884::1729816287::0::1::::<><>::uid://b1dt63tvvif5b::::res://Objects/main_player.tscn
+::res://John/::1729815866
+LICENSE.txt::TextFile::-1::1729814025::0::1::::<><>::
+testing_envJT.tscn::PackedScene::964945759105219335::1729815866::0::1::::<><>::uid://b1dt63tvvif5b::::res://Objects/main_player.tscn
+::res://MainGame/::1729814025
+LICENSE.txt::TextFile::-1::1729814025::0::1::::<><>::
+::res://Moises/::1730683290
+coal.png::CompressedTexture2D::143709013209286987::1730683290::1730683329::1::::<><>::
+LICENSE.txt::TextFile::-1::1729814025::0::1::::<><>::
+playerinv.tres::Resource/Inv::7259145303671269756::1730683290::0::1::::<><>::res://Moises/inventory/inventory_item.gd<>uid://b8krmx84tm6qq::::res://Moises/inventory/items/coal.tres<>res://Moises/inventory/inventory.gd
+testing_envMoises.tscn::PackedScene::2241511084750283508::1730683290::0::1::::<><>::uid://b1dt63tvvif5b::::res://Objects/main_player.tscn<>uid://cgwfk8egjcn6h::::res://Moises/Tilemap_Flat.png<>uid://dboncelr8oty7::::res://Moises/playerinv.tres<>res://Moises/tile_map_layer.gd<>uid://clkutyep5g50s::::res://Moises/inventory/inv_ui.tscn<>uid://b636jat3n8q5o::::res://Assets/profile0.png
+Tilemap_Flat.png::CompressedTexture2D::5239713922441099449::1730683290::1730683329::1::::<><>::
+tile_map_layer.gd::GDScript::-1::1730683290::0::1::::<>TileMapLayer<>::
+wall tileset.png::CompressedTexture2D::6835977966010323453::1730683290::1730683329::1::::<><>::
+::res://Moises/inventory/::1730683290
+inventory.gd::GDScript::-1::1730683290::0::1::::Inv<>Resource<>::
+inventory_item.gd::GDScript::-1::1730683290::0::1::::InvItem<>Resource<>::
+inv_ui.gd::GDScript::-1::1730683290::0::1::::<>Control<>::
+inv_ui.tscn::PackedScene::5566811962346192332::1730683290::0::1::::<><>::res://Moises/inventory/inv_ui.gd
+::res://Moises/inventory/items/::1730683290
+coal.tres::Resource/InvItem::4724351180051780892::1730683290::0::1::::<><>::res://Moises/inventory/inventory_item.gd<>uid://cbu4pvahclr4::::res://Moises/coal.png
+::res://Nick/::1730678928
+dataSaver.gd::GDScript::-1::1730678928::0::1::::<>TextEdit<>::
+LICENSE.txt::TextFile::-1::1729814025::0::1::::<><>::
+testing_envNick.tscn::PackedScene::5132884027352747434::1730678928::0::1::::<><>::uid://b1dt63tvvif5b::::res://Objects/main_player.tscn<>res://Nick/dataSaver.gd
+::res://Objects/::1730683306
+main_player.gd::GDScript::-1::1730683306::0::1::::<>CharacterBody2D<>::
+main_player.tscn::PackedScene::4218734235005353089::1730683306::0::1::::<><>::res://Objects/main_player.gd<>uid://cxmvkd01vpy8f::::res://Assets/CharacterSprite/walkingdown.png<>uid://dgonovnhxuv6p::::res://Assets/CharacterSprite/Runningleft.png<>uid://cvdfl1m4u46hf::::res://Assets/CharacterSprite/Runningright.png<>uid://cgfvtarefq3n3::::res://Assets/CharacterSprite/walkingup.png
+::res://Rylan/::1730678928
+::res://Rylan/Scenes/::1730682819
+main_menu.tscn::PackedScene::8919407910447389659::1730678928::0::1::::<><>::res://Rylan/Scripts/main_menu.gd<>uid://b2wjtb7q0ll8x::::res://Rylan/Temporary Assets/cole.png
+options_menu.tscn::PackedScene::879574958472303915::1730678928::0::1::::<><>::
+testing_envRylan.tscn::PackedScene::3863832371233527410::1730678928::0::1::::<><>::uid://b1dt63tvvif5b::::res://Objects/main_player.tscn
+title_screen.tscn::PackedScene::7840868868068939176::1730682819::0::1::::<><>::res://Rylan/Scripts/title_screen.gd<>uid://clhag1j76qao8::::res://Rylan/Temporary Assets/gamesforlove.png
+::res://Rylan/Scripts/::1730678928
+main_menu.gd::GDScript::-1::1730678928::0::1::::<>Control<>::
+title_screen.gd::GDScript::-1::1730678928::0::1::::<>Node2D<>::
+::res://Rylan/Temporary Assets/::1730679219
+cole.png::CompressedTexture2D::4327516258246294541::1730678928::1730683329::1::::<><>::
+gamesforlove.png::CompressedTexture2D::5559381387452738989::1730678928::1730683329::1::::<><>::
+::res://Sparsh/::1729815496
+LICENSE.txt::TextFile::-1::1729814025::0::1::::<><>::
+testing_envSparsh.tscn::PackedScene::679710057767321164::1729815456::0::1::::<><>::uid://b1dt63tvvif5b::::res://Objects/main_player.tscn
+::res://Wethu/::1729815496
+LICENSE.txt::TextFile::-1::1729814025::0::1::::<><>::
+testing_envWethu.tscn::PackedScene::2808427990221435675::1729815493::0::1::::<><>::uid://b1dt63tvvif5b::::res://Objects/main_player.tscn

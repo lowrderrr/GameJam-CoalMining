@@ -1,4 +1,4 @@
-res://Moises/testing_envMoises.tscn
-res://Moises/playerinv.tres
+res://Rylan/Scenes/title_screen.tscn
 res://Objects/main_player.gd
-res://Moises/inventory/inv_ui.tscn
+res://Francis/mine.tscn
+res://Objects/main_player.tscn

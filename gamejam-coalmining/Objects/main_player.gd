@@ -1,8 +1,10 @@
 extends CharacterBody2D
 
-
 const SPEED = 500.0
 const sprintSpeed = SPEED * 2
+@export var inv: Inv
+
+var item = load("res://Moises/inventory/items/coal.tres")
 
 func _physics_process(delta):
 
@@ -26,3 +28,16 @@ func _physics_process(delta):
 	else:
 		velocity = velocity.normalized() * SPEED	
 	move_and_slide()
+
+	
+
+
+func _on_area_2d_area_entered(area: Area2D) -> void:
+	print('collided')
+	add_item_to_inventory(item)
+	
+func add_item_to_inventory(item: InvItem):
+	print(inv.item)
+	inv.item.append(item)
+	print("Added item to inventory:", item.name)
+	print(inv.item)

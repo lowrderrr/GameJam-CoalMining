@@ -1,0 +1,4 @@
+res://Moises/testing_envMoises.tscn
+res://Moises/playerinv.tres
+res://Objects/main_player.gd
+res://Moises/inventory/inv_ui.tscn

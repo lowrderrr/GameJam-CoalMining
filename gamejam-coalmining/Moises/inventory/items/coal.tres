@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="InvItem" load_steps=3 format=3 uid="uid://b8krmx84tm6qq"]
+
+[ext_resource type="Script" path="res://Moises/inventory/inventory_item.gd" id="1_nhh3c"]
+[ext_resource type="Texture2D" uid="uid://cbu4pvahclr4" path="res://Moises/coal.png" id="2_7ypdt"]
+
+[resource]
+script = ExtResource("1_nhh3c")
+name = "Coal"
+texture = ExtResource("2_7ypdt")

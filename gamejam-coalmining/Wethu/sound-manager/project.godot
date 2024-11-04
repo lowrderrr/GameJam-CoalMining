@@ -1,0 +1,24 @@
+config_version=5
+
+[application]
+
+config/name="Sound Manager"
+config/features=PackedStringArray("4.2", "C#", "Forward Plus")
+config/icon="res://icon.svg"
+
+[autoload]
+
+SoundManager="*res://addons/sound_manager/sound_manager.gd"
+
+[dotnet]
+
+project/assembly_name="Sound Manager"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/sound_manager/plugin.cfg")
+
+[filesystem]
+
+import/blender/enabled=false
+import/fbx/enabled=false

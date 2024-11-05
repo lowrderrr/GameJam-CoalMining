@@ -6,9 +6,6 @@ const SAVE_FILE_NAME = "save.json"
 const DEFAULT_DATA_SLOT = "test202410json"
 #const DEFAULT_DATA_SLOT = "test202410"
 
-#var player_data = PlayerData.new()
-#var player_data = {}
-
 func verify_save_folder(path: String):
 	DirAccess.make_dir_absolute(path)
 
@@ -35,10 +32,10 @@ func save_data(data, data_slot: String = DEFAULT_DATA_SLOT) -> bool:
 		print(FileAccess.get_open_error())
 		return false
 	
-	#file.store_string(json_string)
+	#file.store_string(json_string) # avoid using this. causes data corruption at the moment.
 	file.store_string(data)
 	file.close()
-	print("Saved: " + SAVE_DIR + data_slot)
+	# print("Saved: " + SAVE_DIR + data_slot)
 	return true
 
 
@@ -80,7 +77,7 @@ func _get_init_data():
 # assume an error if it's not json
 func load_data(data_slot: String = DEFAULT_DATA_SLOT):
 	var path = SAVE_DIR + data_slot
-	print(path)
+	# print(path)
 	
 	if FileAccess.file_exists(path):
 		var file = get_file(path)
@@ -92,13 +89,12 @@ func load_data(data_slot: String = DEFAULT_DATA_SLOT):
 		var data = file.get_as_text()
 		# This code assume that data is not corrupted btw
 			
-		print(str(data) + " is real and won't hurt u")
+		# print(str(data) + " is real and won't hurt u")
 		file.close()
 
 		var json_data = JSON.parse_string(data)
 		
 		if json_data == null:
-			#printerr("Cannot parse %s as a json_string: (%s)" % [data_slot, content])
 			printerr("Cannot load data as json from data slot %s: (%s)" % [data_slot, data])
 			return "Error: DataFileNotJson"
 		else:
@@ -109,8 +105,7 @@ func load_data(data_slot: String = DEFAULT_DATA_SLOT):
 
 		# init data + defaults
 
-func del_data(data_slot): # Dangerous! no DEFAULT ID for safe measures ... can be changed later if desired.
-	#$".".clear() # this will fire .changed() so note two file writes may occur
+func del_data(data_slot): # Dangerous! No DEFAULT ID for safe measures ... can be changed later if desired.
 	print("Deleting!\n")
 	DirAccess.remove_absolute(SAVE_DIR + data_slot)
 
@@ -124,16 +119,13 @@ func _on_text_changed() -> void: # save data
 		print("saved data!")
 	else:
 		print("failed to save data!")
-	#save_data(txt, "test202410")
+	#save_data(txt, "test202410json")
 
 func _on_button_pressed() -> void:
-	DataStore.del_data("test202410")
+	DataStore.del_data(DEFAULT_DATA_SLOT)
 	$".".text = str(load_data())
-
-	print("no wayy")
 
 func _ready(): # load data
 	verify_save_folder(SAVE_DIR)
-	#load_data("SAVE_DIR + SAVE_FILE_NAMErobux")
 	var data = DataStore.load_data()
 	$".".text = str(data) + $".".text

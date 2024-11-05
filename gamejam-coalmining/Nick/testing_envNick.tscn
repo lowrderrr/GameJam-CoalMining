@@ -14,7 +14,9 @@ offset_top = -770.0
 offset_right = -547.0
 offset_bottom = -283.0
 theme_override_font_sizes/font_size = 100
-placeholder_text = "saving is experimental"
+placeholder_text = "this is
+automatically
+saved"
 script = ExtResource("2_lorn5")
 
 [node name="Button" type="Button" parent="."]
@@ -23,7 +25,7 @@ offset_top = -172.0
 offset_right = 1803.0
 offset_bottom = 332.0
 theme_override_font_sizes/font_size = 100
-text = "Delete all yer data (DANGEROUS PLEASE KEEP YOUR MOUSE AWAY)"
+text = "Delete all your data"
 
 [connection signal="text_changed" from="TextEditAutosaveThis" to="TextEditAutosaveThis" method="_on_text_changed"]
 [connection signal="pressed" from="Button" to="TextEditAutosaveThis" method="_on_button_pressed"]

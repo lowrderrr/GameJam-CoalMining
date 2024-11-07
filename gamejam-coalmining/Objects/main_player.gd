@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
-const SPEED = 500.0
-const sprintSpeed = SPEED * 2
+const SPEED = 350.0
+const sprintSpeed = SPEED * 1.5
 @export var inv: Inv
 
 var item = load("res://Moises/inventory/items/coal.tres")
@@ -53,9 +53,10 @@ func _physics_process(delta):
 	else:
 		velocity = velocity.normalized() * SPEED	
 	
-	move_and_slide()
+	if xIdle == false || yIdle == false:
+		move_and_slide()
 	
-	if xIdle && yIdle:
+	if !directionX && !directionY:
 		print("Idling")
 		# 0 is up, 1 is down, 2 is right, 3 is left
 		if (characterDirection == 0):

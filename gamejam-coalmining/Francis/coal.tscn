@@ -1,0 +1,46 @@
+[gd_scene load_steps=5 format=3 uid="uid://wunsif77lhh4"]
+
+[ext_resource type="Script" path="res://Francis/coal.gd" id="1_2vtl5"]
+[ext_resource type="Texture2D" uid="uid://dg5pfx8xoc877" path="res://Assets/coal.png" id="1_v1tai"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g71ay"]
+size = Vector2(64, 64)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kfs5g"]
+size = Vector2(64, 64)
+
+[node name="Coal" type="StaticBody2D"]
+script = ExtResource("1_2vtl5")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("1_v1tai")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+scale = Vector2(1.5, 1.5)
+shape = SubResource("RectangleShape2D_g71ay")
+
+[node name="Block" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_kfs5g")
+debug_color = Color(0.95521, 9.62615e-07, 0.544408, 0.42)
+
+[node name="TextEdit" type="RichTextLabel" parent="."]
+texture_filter = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -7.0
+offset_top = -18.0
+offset_right = 21.0
+offset_bottom = 52.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.5, 0.5)
+theme_override_font_sizes/normal_font_size = 50
+text = "5"
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://bld7auhskowov"]
+[gd_scene load_steps=25 format=3 uid="uid://bld7auhskowov"]
 
 [ext_resource type="Texture2D" uid="uid://b0napyhboabf" path="res://Assets/ground tileset.png" id="1_j3ax8"]
 [ext_resource type="Texture2D" uid="uid://b13wn6du8but8" path="res://Assets/grey tilesTEMP.png" id="1_vqijw"]
@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://dpwmovhmipumd" path="res://Assets/wall tileset/w_0001.png" id="4_pxrs0"]
 [ext_resource type="Texture2D" uid="uid://b3gpiygg7cnel" path="res://Assets/wall tileset/w_0006.png" id="8_nab44"]
 [ext_resource type="Texture2D" uid="uid://dtfsaubkp8lpo" path="res://Assets/wall tileset/w_0003.png" id="9_0lin4"]
+[ext_resource type="PackedScene" uid="uid://wunsif77lhh4" path="res://Francis/coal.tscn" id="12_iev6h"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_l1o3u"]
 texture = ExtResource("1_j3ax8")
@@ -358,3 +359,9 @@ layer_1/tile_data = PackedInt32Array(65558, 65537, 2, 65559, 65537, 2, 65560, 65
 
 [node name="MainPlayer" parent="." instance=ExtResource("2_q5o7l")]
 position = Vector2(359, 332)
+
+[node name="Coal" parent="." instance=ExtResource("12_iev6h")]
+position = Vector2(483, 348)
+
+[node name="Coal2" parent="." instance=ExtResource("12_iev6h")]
+position = Vector2(742, 411)

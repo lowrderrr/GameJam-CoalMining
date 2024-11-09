@@ -20,9 +20,14 @@ func get_file(path, access = FileAccess.READ):
 	#return FileAccess.open_encrypted_with_pass(path, access, SECURITY_KEY)
 
 # Returns false if data could not be saved
-func save_data(data, data_slot: String = DEFAULT_DATA_SLOT) -> bool:		
-	#var json_string = JSON.stringify(data, "\t") #not recommended unless converting godot to json
-	var json_string = JSON.parse_string(data)
+func save_data(data, data_slot: String = DEFAULT_DATA_SLOT) -> bool:
+	var isString = type_string(typeof(data)) == "String"
+	var json_string
+	if isString:
+		json_string = JSON.parse_string(data)
+	else:
+		json_string = JSON.stringify(data, "\t")
+
 	if json_string == null:
 		print("This data can't be parsed to json. save_data() has rejected new saved data to prevent corruption.")
 		return false
@@ -32,8 +37,11 @@ func save_data(data, data_slot: String = DEFAULT_DATA_SLOT) -> bool:
 		print(FileAccess.get_open_error())
 		return false
 	
-	#file.store_string(json_string) # avoid using this. causes data corruption at the moment.
-	file.store_string(data)
+	if isString:
+		file.store_string(data)
+	else:
+		file.store_string(json_string)
+	#
 	file.close()
 	# print("Saved: " + SAVE_DIR + data_slot)
 	return true
@@ -74,8 +82,8 @@ func _get_init_data():
 	}
 	
 
-# assume an error if it's not json
-func load_data(data_slot: String = DEFAULT_DATA_SLOT):
+# assume an error if it's a string since it shouldn't be a string in other cases
+func load_data(data_slot: String = DEFAULT_DATA_SLOT) -> Variant:
 	var path = SAVE_DIR + data_slot
 	# print(path)
 	
@@ -95,19 +103,19 @@ func load_data(data_slot: String = DEFAULT_DATA_SLOT):
 		var json_data = JSON.parse_string(data)
 		
 		if json_data == null:
-			printerr("Cannot load data as json from data slot %s: (%s)" % [data_slot, data])
+			printerr("Cannot load data from json. Data slot %s: (%s)" % [data_slot, data])
 			return "Error: DataFileNotJson"
 		else:
 			print("Loaded: " + str(data))
-			return data
+			return json_data
 	else:
 		return _get_init_data()
 
 		# init data + defaults
 
 func del_data(data_slot): # Dangerous! No DEFAULT ID for safe measures ... can be changed later if desired.
-	print("Deleting!\n")
 	DirAccess.remove_absolute(SAVE_DIR + data_slot)
+	print("Data from data slot " + data_slot + " has been cleared.")
 
 # example functions
 
@@ -129,3 +137,19 @@ func _ready(): # load data
 	verify_save_folder(SAVE_DIR)
 	var data = DataStore.load_data()
 	$".".text = str(data) + $".".text
+	
+	print("Your inventory: " + str(data["inventory"]))
+	
+	var timer = Timer.new()
+	add_child(timer)
+	timer.wait_time = 2.0
+	timer.one_shot = true
+	timer.start()
+	await timer.timeout
+	print("2 seconds have passed!")
+
+
+	data["data_ver"] = 100000023
+	DataStore.save_data(data)
+	
+	#print(type_string(typeof(data)))

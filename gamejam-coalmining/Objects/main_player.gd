@@ -57,7 +57,7 @@ func _physics_process(delta):
 		move_and_slide()
 	
 	if !directionX && !directionY:
-		print("Idling")
+		#print("Idling")
 		# 0 is up, 1 is down, 2 is right, 3 is left
 		if (characterDirection == 0):
 			sprite_2d.animation = "Idle_Up"

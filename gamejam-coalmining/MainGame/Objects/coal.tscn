@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://wunsif77lhh4"]
 
-[ext_resource type="Script" path="res://Francis/coal.gd" id="1_2vtl5"]
+[ext_resource type="Script" path="res://MainGame/Objects/coal.gd" id="1_2vtl5"]
 [ext_resource type="Texture2D" uid="uid://dg5pfx8xoc877" path="res://Assets/coal.png" id="1_v1tai"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g71ay"]

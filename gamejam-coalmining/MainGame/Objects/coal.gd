@@ -4,16 +4,15 @@ extends StaticBody2D
 
 var maxHP = 5
 @onready var coal = $"."
-func _ready():
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	$TextEdit.text = str(maxHP)
 	#Turn off collision if the coal is invisible
 	if coal.visible == false:
 		$Block.disabled = true
 	else:
 		$Block.disabled = false
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	$TextEdit.text = str(maxHP)
 	
 
 

@@ -10,6 +10,7 @@ size = Vector2(64, 64)
 size = Vector2(64, 64)
 
 [node name="Coal" type="StaticBody2D"]
+visible = false
 script = ExtResource("1_2vtl5")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

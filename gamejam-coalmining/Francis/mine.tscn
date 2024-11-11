@@ -234,13 +234,13 @@ position = Vector2(243, 186)
 position = Vector2(362, 245)
 
 [node name="Coal2" parent="MineralList" instance=ExtResource("12_iev6h")]
-position = Vector2(514, 489)
+position = Vector2(520, 251)
 
 [node name="Coal3" parent="MineralList" instance=ExtResource("12_iev6h")]
-position = Vector2(950, 340)
+position = Vector2(662, 258)
 
 [node name="Coal4" parent="MineralList" instance=ExtResource("12_iev6h")]
-position = Vector2(436, 726)
+position = Vector2(809, 261)
 
 [node name="Coal5" parent="MineralList" instance=ExtResource("12_iev6h")]
-position = Vector2(1478, 322)
+position = Vector2(958, 263)

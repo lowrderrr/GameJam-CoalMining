@@ -16,7 +16,7 @@ func _process(delta: float) -> void:
 		#maxHP -= 1
 	#if body.name == "MainPlayer" && maxHP <= 0:
 		#queue_free()
-
-func _on_area_2d_body_entered(body: Node2D) -> void:
+		
+func _on_body_entered(body: Node2D) -> void:
 	if body.name == "MainPlayer":
 		player_near_shop.emit()

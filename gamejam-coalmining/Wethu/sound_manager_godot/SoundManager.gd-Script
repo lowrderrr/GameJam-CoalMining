@@ -1,0 +1,70 @@
+extends Node
+
+# Declare audio variables
+var background_music_player := AudioStreamPlayer.new()  # For background music
+var sfx_player := AudioStreamPlayer2D.new()  # For sound effects
+var music_volume := 0.5  # Default background music volume
+var sfx_volume := 0.5  # Default sound effects volume
+var is_muted := false  # Track if audio is muted
+
+# Preload some common sounds 
+var win_sound = preload("res://sounds/level-win-6416.mp3")
+var jump_sound = preload("res://sound/retro-jump-3-236683.mp3")
+var walk_sound = preload("res://sounds/walking-on-gravel-169409.mp3")
+var background_music = preload("res://sounds/old-mineambience-200677.mp3")
+
+# Called when the node enters the scene tree for the first time
+func _ready():
+    # Add audio players to the scene so they can play sounds
+    add_child(background_music_player)
+    add_child(sfx_player)
+
+    # Set up background music player (looping)
+    background_music_player.loop = true
+
+    # Default music and sfx volumes
+    set_music_volume(music_volume)
+    set_sfx_volume(sfx_volume)
+
+    # Set this node as an Autoload singleton to make it accessible globally
+    # (In the Project Settings, go to Autoload and add SoundManager.gd as a singleton)
+
+# Play background music
+func play_background_music(music_stream: AudioStream, volume: float = 0.5):
+    if not is_muted:
+        background_music_player.stream = music_stream
+        set_music_volume(volume)
+        background_music_player.play()
+
+#Play sound effect
+func play_sound_effect(sound: AudioStream, volume: float = 0.5):
+    if not is_muted:
+        sfx_player.stream = sound
+        set_sfx_volume(volume)
+        sfx_player.play()
+
+# Adjust background music volume
+func set_music_volume(volume: float):
+    music_volume = volume
+    background_music_player.volume_db = linear_to_db(volume)
+
+# Adjust sound effect volume
+func set_sfx_volume(volume: float):
+    sfx_volume = volume
+    sfx_player.volume_db = linear_to_db(volume)
+
+# Mute/unmute all audio
+func toggle_mute():
+    is_muted = not is_muted
+    background_music_player.volume_db = -80 if is_muted else linear_to_db(music_volume)
+    sfx_player.volume_db = -80 if is_muted else linear_to_db(sfx_volume)
+
+# Stop all sounds
+func stop_all_sounds():
+    background_music_player.stop()
+    sfx_player.stop()
+
+# Helper function to convert linear volume to decibels
+func linear_to_db(linear_volume: float) -> float:
+    return 20 * log(linear_volume) / log(10) if linear_volume > 0 else -80  # Avoid log(0) error
+

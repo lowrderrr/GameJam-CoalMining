@@ -1,16 +1,92 @@
-[gd_scene load_steps=9 format=3 uid="uid://d0cvly8rmsld0"]
+[gd_scene load_steps=22 format=3 uid="uid://d0cvly8rmsld0"]
 
 [ext_resource type="Script" path="res://Rylan/Scripts/main_menu.gd" id="1_5twnp"]
-[ext_resource type="Texture2D" uid="uid://b2wjtb7q0ll8x" path="res://Rylan/Temporary Assets/cole.png" id="1_81evn"]
+[ext_resource type="Texture2D" uid="uid://daoyddxr0k0lc" path="res://Assets/MenuAssets/Cole_the_Miner_final.png" id="2_ni33h"]
+[ext_resource type="Texture2D" uid="uid://bwf0ik2vm3b7g" path="res://Assets/MenuAssets/start button (hover and click).png" id="3_u4y0r"]
+[ext_resource type="Texture2D" uid="uid://djx7hulix620g" path="res://Assets/MenuAssets/option button (hover and click).png" id="3_ypuwj"]
+[ext_resource type="Texture2D" uid="uid://ct0ehtffrn5h2" path="res://Assets/MenuAssets/return (hover and click).png" id="5_x3k22"]
+[ext_resource type="AudioStream" uid="uid://bi3xsen3il4ax" path="res://Rylan/Super Mario 64 Soundtrack - Dire, Dire Docks.mp3" id="6_auwfh"]
 
 [sub_resource type="SystemFont" id="SystemFont_dkpqp"]
 font_names = PackedStringArray("Castellar")
 
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_1o86e"]
+content_margin_left = 0.0
+content_margin_top = 40.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+texture = ExtResource("3_u4y0r")
+region_rect = Rect2(4, 25, 53, 17)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_h3hmy"]
+content_margin_left = 0.0
+content_margin_top = 40.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+texture = ExtResource("3_u4y0r")
+region_rect = Rect2(4, 25, 53, 17)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_wbojt"]
+content_margin_left = 0.0
+content_margin_top = 40.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+texture = ExtResource("3_u4y0r")
+region_rect = Rect2(5, 2, 53, 17)
+
 [sub_resource type="SystemFont" id="SystemFont_1aial"]
 font_names = PackedStringArray("Castellar")
 
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_1fx17"]
+content_margin_left = 0.0
+content_margin_top = 40.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+texture = ExtResource("3_ypuwj")
+region_rect = Rect2(4, 25, 53, 17)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_lfhh2"]
+content_margin_left = 0.0
+content_margin_top = 40.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+texture = ExtResource("3_ypuwj")
+region_rect = Rect2(4, 25, 53, 17)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_onp8j"]
+content_margin_left = 0.0
+content_margin_top = 40.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+texture = ExtResource("3_ypuwj")
+region_rect = Rect2(5, 2, 53, 17)
+
 [sub_resource type="SystemFont" id="SystemFont_1cmxs"]
 font_names = PackedStringArray("Castellar")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_j8w8s"]
+content_margin_left = 0.0
+content_margin_top = 40.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+texture = ExtResource("5_x3k22")
+region_rect = Rect2(4, 25, 53, 17)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_jaeqw"]
+content_margin_left = 0.0
+content_margin_top = 40.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+texture = ExtResource("5_x3k22")
+region_rect = Rect2(4, 25, 53, 17)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_6nrfj"]
+content_margin_left = 0.0
+content_margin_top = 40.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+texture = ExtResource("5_x3k22")
+region_rect = Rect2(5, 2, 53, 17)
 
 [sub_resource type="Animation" id="Animation_aohgy"]
 resource_name = "Fadeinout"
@@ -58,18 +134,18 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_5twnp")
 
-[node name="TextureRect" type="TextureRect" parent="."]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -64.0
-offset_top = -2.0
-offset_right = 64.0
-offset_bottom = 70.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("1_81evn")
+[node name="TextureRect2" type="TextureRect" parent="."]
+texture_filter = 1
+texture_repeat = 1
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+offset_left = -200.0
+offset_top = 9.0
+offset_right = 1516.0
+offset_bottom = 301.0
+texture = ExtResource("2_ni33h")
+expand_mode = 3
+stretch_mode = 5
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1
@@ -94,11 +170,6 @@ theme_override_constants/separation = 60
 [node name="Seperator" type="Control" parent="MarginContainer/Title"]
 layout_mode = 2
 
-[node name="Title(in case)" type="Label" parent="MarginContainer/Title"]
-layout_mode = 2
-horizontal_alignment = 1
-vertical_alignment = 1
-
 [node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
 layout_mode = 2
 alignment = 1
@@ -108,34 +179,52 @@ layout_mode = 2
 theme_override_constants/separation = 50
 alignment = 1
 
+[node name="ButtonsToTitleSeperator4" type="Control" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="ButtonsToTitleSeperator2" type="Control" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="ButtonsToTitleSeperator3" type="Control" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+
 [node name="ButtonsToTitleSeperator" type="Control" parent="MarginContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
 
 [node name="Start" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+texture_filter = 1
+texture_repeat = 1
 custom_minimum_size = Vector2(120, 32)
 layout_mode = 2
 theme_override_fonts/font = SubResource("SystemFont_dkpqp")
-text = "Start
-"
+theme_override_styles/hover = SubResource("StyleBoxTexture_1o86e")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_h3hmy")
+theme_override_styles/normal = SubResource("StyleBoxTexture_wbojt")
 
 [node name="Options" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+texture_filter = 1
+texture_repeat = 1
 layout_mode = 2
 theme_override_fonts/font = SubResource("SystemFont_1aial")
-text = "Options
-"
+theme_override_styles/hover = SubResource("StyleBoxTexture_1fx17")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_lfhh2")
+theme_override_styles/normal = SubResource("StyleBoxTexture_onp8j")
 
 [node name="Quit" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+texture_filter = 1
+texture_repeat = 1
 layout_mode = 2
 theme_override_fonts/font = SubResource("SystemFont_1cmxs")
-text = "Quit
-"
+theme_override_styles/hover = SubResource("StyleBoxTexture_j8w8s")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_jaeqw")
+theme_override_styles/normal = SubResource("StyleBoxTexture_6nrfj")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 0
 offset_left = -10.0
 offset_top = -11.0
-offset_right = 1155.0
-offset_bottom = 662.0
+offset_right = 1303.0
+offset_bottom = 741.0
 color = Color(0, 0, 0, 1)
 
 [node name="Timer" type="Timer" parent="."]
@@ -144,5 +233,10 @@ color = Color(0, 0, 0, 1)
 libraries = {
 "": SubResource("AnimationLibrary_sry0b")
 }
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_auwfh")
+autoplay = true
+bus = &"Music"
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

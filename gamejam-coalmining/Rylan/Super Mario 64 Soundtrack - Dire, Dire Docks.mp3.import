@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bi3xsen3il4ax"
+path="res://.godot/imported/Super Mario 64 Soundtrack - Dire, Dire Docks.mp3-4665ccb1d769e9d07cc085cabd72fc74.mp3str"
+
+[deps]
+
+source_file="res://Rylan/Super Mario 64 Soundtrack - Dire, Dire Docks.mp3"
+dest_files=["res://.godot/imported/Super Mario 64 Soundtrack - Dire, Dire Docks.mp3-4665ccb1d769e9d07cc085cabd72fc74.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

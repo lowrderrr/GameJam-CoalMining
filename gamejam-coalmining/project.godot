@@ -20,6 +20,12 @@ config/icon="res://icon.svg"
 DataStore="*res://Nick/DataStore.gd"
 FadeTransition="*res://MainGame/Global/fade_transition.tscn"
 
+[display]
+
+window/size/viewport_width=1280
+window/size/viewport_height=720
+window/stretch/mode="viewport"
+
 [input]
 
 Up={

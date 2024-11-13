@@ -1,8 +1,29 @@
-[gd_scene load_steps=4 format=3 uid="uid://mscqasqqaamt"]
+[gd_scene load_steps=11 format=3 uid="uid://mscqasqqaamt"]
 
 [ext_resource type="Script" path="res://Rylan/Scripts/options_menu.gd" id="1_fmq76"]
-[ext_resource type="AudioStream" uid="uid://bi3xsen3il4ax" path="res://Rylan/Super Mario 64 Soundtrack - Dire, Dire Docks.mp3" id="2_2tri3"]
+[ext_resource type="AudioStream" uid="uid://bi3xsen3il4ax" path="res://Rylan/Temporary Assets/Super Mario 64 Soundtrack - Dire, Dire Docks.mp3" id="2_2tri3"]
 [ext_resource type="Script" path="res://Rylan/Scripts/master_volume.gd" id="2_ombb4"]
+
+[sub_resource type="SystemFont" id="SystemFont_srdua"]
+font_names = PackedStringArray("Castellar")
+
+[sub_resource type="SystemFont" id="SystemFont_1awmo"]
+font_names = PackedStringArray("Castellar")
+
+[sub_resource type="SystemFont" id="SystemFont_34vb8"]
+font_names = PackedStringArray("Castellar")
+
+[sub_resource type="SystemFont" id="SystemFont_3i7mw"]
+font_names = PackedStringArray("Castellar")
+
+[sub_resource type="SystemFont" id="SystemFont_l4njx"]
+font_names = PackedStringArray("Castellar")
+
+[sub_resource type="SystemFont" id="SystemFont_55wnk"]
+font_names = PackedStringArray("Castellar")
+
+[sub_resource type="SystemFont" id="SystemFont_pcd76"]
+font_names = PackedStringArray("Castellar")
 
 [node name="Options_Menu" type="Control"]
 layout_mode = 3
@@ -18,20 +39,45 @@ stream = ExtResource("2_2tri3")
 autoplay = true
 bus = &"Music"
 
+[node name="ColorRect2" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 1280.0
+offset_bottom = 720.0
+color = Color(0.553186, 0.263071, 0, 0.686275)
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = 19.0
+offset_top = 16.0
+offset_right = 1261.0
+offset_bottom = 703.0
+color = Color(0.355314, 0.355314, 0.355314, 0.686275)
+
 [node name="MarginContainer" type="MarginContainer" parent="."]
+custom_minimum_size = Vector2(40, 40)
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 40.0
+offset_right = -40.0
 grow_horizontal = 2
 grow_vertical = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="MarginContainer/VBoxContainer"]
+[node name="Seperator4" type="Control" parent="MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 30)
 layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer"]
+texture_filter = 1
+layout_mode = 2
+theme_override_fonts/font = SubResource("SystemFont_srdua")
+theme_override_font_sizes/font_size = 30
 text = "MASTER VOLUME"
+horizontal_alignment = 1
 
 [node name="masterVolume" type="HSlider" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
@@ -41,9 +87,17 @@ value = 1.0
 script = ExtResource("2_ombb4")
 bus_name = "Master"
 
-[node name="Label2" type="Label" parent="MarginContainer/VBoxContainer"]
+[node name="Seperator" type="Control" parent="MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 60)
 layout_mode = 2
+
+[node name="Label2" type="Label" parent="MarginContainer/VBoxContainer"]
+texture_filter = 1
+layout_mode = 2
+theme_override_fonts/font = SubResource("SystemFont_1awmo")
+theme_override_font_sizes/font_size = 30
 text = "MUSIC"
+horizontal_alignment = 1
 
 [node name="Music" type="HSlider" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
@@ -53,9 +107,17 @@ value = 1.0
 script = ExtResource("2_ombb4")
 bus_name = "Music"
 
-[node name="Label3" type="Label" parent="MarginContainer/VBoxContainer"]
+[node name="Seperator2" type="Control" parent="MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 60)
 layout_mode = 2
+
+[node name="Label3" type="Label" parent="MarginContainer/VBoxContainer"]
+texture_filter = 1
+layout_mode = 2
+theme_override_fonts/font = SubResource("SystemFont_34vb8")
+theme_override_font_sizes/font_size = 30
 text = "SOUND EFFECTS"
+horizontal_alignment = 1
 
 [node name="SFX" type="HSlider" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
@@ -65,12 +127,44 @@ value = 1.0
 script = ExtResource("2_ombb4")
 bus_name = "SFX"
 
-[node name="CheckBox" type="CheckBox" parent="MarginContainer/VBoxContainer"]
+[node name="Seperator3" type="Control" parent="MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 20)
 layout_mode = 2
+
+[node name="CheckBox" type="CheckBox" parent="MarginContainer/VBoxContainer"]
+texture_filter = 1
+layout_mode = 2
+theme_override_fonts/font = SubResource("SystemFont_3i7mw")
+theme_override_font_sizes/font_size = 30
 text = "MUTE"
 
-[node name="Resolution" type="OptionButton" parent="MarginContainer/VBoxContainer"]
+[node name="Seperator7" type="Control" parent="MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 20)
 layout_mode = 2
+
+[node name="Label4" type="Label" parent="MarginContainer/VBoxContainer"]
+texture_filter = 1
+layout_mode = 2
+theme_override_fonts/font = SubResource("SystemFont_34vb8")
+theme_override_font_sizes/font_size = 30
+text = "CONTROLS"
+horizontal_alignment = 1
+
+[node name="Controls_Button" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = SubResource("SystemFont_l4njx")
+theme_override_font_sizes/font_size = 25
+text = "VIEW CONTROLS"
+
+[node name="Seperator6" type="Control" parent="MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+
+[node name="Resolution" type="OptionButton" parent="MarginContainer/VBoxContainer"]
+texture_filter = 1
+layout_mode = 2
+theme_override_fonts/font = SubResource("SystemFont_55wnk")
+theme_override_font_sizes/font_size = 20
 selected = 2
 item_count = 3
 popup/item_0/text = "1920x1280"
@@ -79,8 +173,15 @@ popup/item_1/id = 1
 popup/item_2/text = "1280x720"
 popup/item_2/id = 2
 
-[node name="Return" type="Button" parent="MarginContainer/VBoxContainer"]
+[node name="Seperator5" type="Control" parent="MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 40)
 layout_mode = 2
+
+[node name="Return" type="Button" parent="MarginContainer/VBoxContainer"]
+texture_filter = 1
+layout_mode = 2
+theme_override_fonts/font = SubResource("SystemFont_pcd76")
+theme_override_font_sizes/font_size = 40
 text = "EXIT"
 
 [connection signal="changed" from="MarginContainer/VBoxContainer/masterVolume" to="." method="_on_h_slider_changed"]

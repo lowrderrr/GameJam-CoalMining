@@ -1,19 +1,18 @@
 extends Control
 
 @onready var returnButton = $MarginContainer/VBoxContainer/Return as Button
+@onready var controls_button = $MarginContainer/VBoxContainer/Controls_Button as Button
+@onready var check_box = $MarginContainer/VBoxContainer/CheckBox
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	returnButton.button_down.connect(on_return_pressed)
+	controls_button.button_down.connect(on_controls_pressed)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	pass
-
-
-func _on_check_box_toggled(toggled_on):
-	pass # Replace with function body.
 
 
 func _on_resolution_item_selected(index):
@@ -27,3 +26,6 @@ func _on_resolution_item_selected(index):
 
 func on_return_pressed() -> void:
 	get_tree().change_scene_to_file("res://Rylan/Scenes/title_screen.tscn")
+	
+func on_controls_pressed() -> void:
+	get_tree().change_scene_to_file("res://Rylan/Scenes/controls.tscn")

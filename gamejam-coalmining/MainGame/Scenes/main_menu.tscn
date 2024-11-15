@@ -1,6 +1,6 @@
 [gd_scene load_steps=22 format=3 uid="uid://d0cvly8rmsld0"]
 
-[ext_resource type="Script" path="res://Rylan/Scripts/main_menu.gd" id="1_5twnp"]
+[ext_resource type="Script" path="res://MainGame/Scripts/main_menu.gd" id="1_5twnp"]
 [ext_resource type="Texture2D" uid="uid://daoyddxr0k0lc" path="res://Assets/MenuAssets/Cole_the_Miner_final.png" id="2_ni33h"]
 [ext_resource type="Texture2D" uid="uid://bwf0ik2vm3b7g" path="res://Assets/MenuAssets/start button (hover and click).png" id="3_u4y0r"]
 [ext_resource type="Texture2D" uid="uid://djx7hulix620g" path="res://Assets/MenuAssets/option button (hover and click).png" id="3_ypuwj"]

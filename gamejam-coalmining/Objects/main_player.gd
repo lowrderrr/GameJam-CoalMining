@@ -1,8 +1,10 @@
 extends CharacterBody2D
 
+
 const SPEED = 350.0
 const sprintSpeed = SPEED * 1.5
 @export var inv: Inv
+@export var miningStrength = 1 #Mining power
 
 var item = load("res://Moises/inventory/items/coal.tres")
 

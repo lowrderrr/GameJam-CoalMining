@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://dws0mv6bvwhu5"]
 
-[ext_resource type="Script" path="res://Rylan/Scripts/game_over.gd" id="1_skyum"]
+[ext_resource type="Script" path="res://MainGame/Scripts/game_over.gd" id="1_skyum"]
 
 [sub_resource type="SystemFont" id="SystemFont_rvdm5"]
 font_names = PackedStringArray("Castellar")

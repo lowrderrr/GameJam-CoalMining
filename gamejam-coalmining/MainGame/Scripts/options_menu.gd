@@ -10,11 +10,6 @@ func _ready():
 	controls_button.button_down.connect(on_controls_pressed)
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
-
-
 func _on_resolution_item_selected(index):
 	match index:
 		0:
@@ -25,7 +20,7 @@ func _on_resolution_item_selected(index):
 			DisplayServer.window_set_size(Vector2i(1280,720))
 
 func on_return_pressed() -> void:
-	get_tree().change_scene_to_file("res://Rylan/Scenes/title_screen.tscn")
+	get_tree().change_scene_to_file("res://MainGame/Scenes/main_menu.tscn")
 	
 func on_controls_pressed() -> void:
-	get_tree().change_scene_to_file("res://Rylan/Scenes/controls.tscn")
+	get_tree().change_scene_to_file("res://MainGame/Scenes/controls.tscn")

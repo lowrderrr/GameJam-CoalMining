@@ -14,19 +14,19 @@ var second = 0
 
 #Note that the "MineralList" is all invisible
 func _ready():
+	timer.wait_time = 10
 	timer.start()
-	#Summon coal
+	#Summon rocks
 	for child in mineral_list.get_children():
-		var random_number = rng.randi_range(0, 5)
+		var random_number = rng.randi_range(0, 10)
 		#Make child visible if num in range
 		if child.name.begins_with("Coal"):
 			coalArr.append(child)
-		if random_number <= 2 && random_number >= 0:
+		if random_number <= 5 && random_number >= 0:
 			child.visible = true
 			if child.name.begins_with("Coal"):
 				coalVisible += 1
 				coalArr.pop_back()
-			#print("Visible!")
 	if coalVisible < minCoal:
 		var req = minCoal - coalVisible
 		for i in range(0, req):
@@ -49,3 +49,6 @@ func _on_timer_timeout() -> void:
 	#TODO game over scene if time runs out
 	if (minute == 0 && second == 0):
 		print("Game Over")
+		FadeTransition.transition()
+		await FadeTransition.on_transition_finished
+		get_tree().change_scene_to_file("res://MainGame/Scenes/gameOver.tscn")

@@ -1,7 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://wunsif77lhh4"]
+[gd_scene load_steps=5 format=3 uid="uid://dlgob3e2344tg"]
 
-[ext_resource type="Script" path="res://MainGame/Objects/coal.gd" id="1_2vtl5"]
-[ext_resource type="Texture2D" uid="uid://b5u57jsyx84b2" path="res://Assets/CoalStone.png" id="2_hcn5v"]
+[ext_resource type="Script" path="res://MainGame/Objects/stone.gd" id="1_q12sg"]
+[ext_resource type="Texture2D" uid="uid://d3k3g0y2y3rxu" path="res://Assets/Stone.png" id="2_1wrd3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g71ay"]
 size = Vector2(64, 64)
@@ -9,14 +9,14 @@ size = Vector2(64, 64)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kfs5g"]
 size = Vector2(64, 64)
 
-[node name="Coal" type="StaticBody2D"]
-script = ExtResource("1_2vtl5")
+[node name="Stone" type="StaticBody2D"]
+script = ExtResource("1_q12sg")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
 position = Vector2(4.76837e-07, 1.43051e-06)
 scale = Vector2(2.75, 2.75)
-texture = ExtResource("2_hcn5v")
+texture = ExtResource("2_1wrd3")
 
 [node name="Area2D" type="Area2D" parent="."]
 
@@ -27,7 +27,7 @@ shape = SubResource("RectangleShape2D_g71ay")
 [node name="Block" type="CollisionShape2D" parent="."]
 scale = Vector2(0.7, 0.7)
 shape = SubResource("RectangleShape2D_kfs5g")
-debug_color = Color(0, 0, 0, 0.42)
+debug_color = Color(0.695579, 0.494841, 1.92523e-07, 0.42)
 
 [node name="TextEdit" type="Label" parent="."]
 texture_filter = 1

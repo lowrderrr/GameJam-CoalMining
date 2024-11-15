@@ -2,7 +2,7 @@ extends StaticBody2D
 
 #TODO Ensuring that each object breaks their own and not all at once. Spawn each object uniquely
 
-var maxHP = 10
+var maxHP = 15
 @onready var coal = $"."
 
 var miningaway = false

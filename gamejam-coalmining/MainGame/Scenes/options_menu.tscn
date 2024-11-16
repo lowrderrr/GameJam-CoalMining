@@ -1,7 +1,6 @@
-[gd_scene load_steps=11 format=3 uid="uid://mscqasqqaamt"]
+[gd_scene load_steps=10 format=3 uid="uid://mscqasqqaamt"]
 
 [ext_resource type="Script" path="res://MainGame/Scripts/options_menu.gd" id="1_fmq76"]
-[ext_resource type="AudioStream" uid="uid://bi3xsen3il4ax" path="res://Rylan/Temporary Assets/Super Mario 64 Soundtrack - Dire, Dire Docks.mp3" id="2_2tri3"]
 [ext_resource type="Script" path="res://MainGame/Scripts/master_volume.gd" id="2_ombb4"]
 
 [sub_resource type="SystemFont" id="SystemFont_srdua"]
@@ -35,7 +34,6 @@ grow_vertical = 2
 script = ExtResource("1_fmq76")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("2_2tri3")
 autoplay = true
 bus = &"Music"
 
@@ -43,7 +41,7 @@ bus = &"Music"
 layout_mode = 0
 offset_right = 1280.0
 offset_bottom = 720.0
-color = Color(0.553186, 0.263071, 0, 0.686275)
+color = Color(0.552941, 0.262745, 0, 1)
 
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 0
@@ -132,6 +130,7 @@ custom_minimum_size = Vector2(0, 20)
 layout_mode = 2
 
 [node name="CheckBox" type="CheckBox" parent="MarginContainer/VBoxContainer"]
+visible = false
 texture_filter = 1
 layout_mode = 2
 theme_override_fonts/font = SubResource("SystemFont_3i7mw")
@@ -185,13 +184,13 @@ theme_override_font_sizes/font_size = 40
 text = "EXIT"
 
 [connection signal="changed" from="MarginContainer/VBoxContainer/masterVolume" to="." method="_on_h_slider_changed"]
-[connection signal="value_changed" from="MarginContainer/VBoxContainer/masterVolume" to="." method="_on_master_volume_value_changed"]
 [connection signal="value_changed" from="MarginContainer/VBoxContainer/masterVolume" to="." method="_on_h_slider_value_changed"]
+[connection signal="value_changed" from="MarginContainer/VBoxContainer/masterVolume" to="." method="_on_master_volume_value_changed"]
 [connection signal="changed" from="MarginContainer/VBoxContainer/Music" to="." method="_on_h_slider_changed"]
-[connection signal="value_changed" from="MarginContainer/VBoxContainer/Music" to="." method="_on_master_volume_value_changed"]
 [connection signal="value_changed" from="MarginContainer/VBoxContainer/Music" to="." method="_on_h_slider_value_changed"]
+[connection signal="value_changed" from="MarginContainer/VBoxContainer/Music" to="." method="_on_master_volume_value_changed"]
 [connection signal="changed" from="MarginContainer/VBoxContainer/SFX" to="." method="_on_h_slider_changed"]
-[connection signal="value_changed" from="MarginContainer/VBoxContainer/SFX" to="." method="_on_master_volume_value_changed"]
 [connection signal="value_changed" from="MarginContainer/VBoxContainer/SFX" to="." method="_on_h_slider_value_changed"]
+[connection signal="value_changed" from="MarginContainer/VBoxContainer/SFX" to="." method="_on_master_volume_value_changed"]
 [connection signal="toggled" from="MarginContainer/VBoxContainer/CheckBox" to="." method="_on_check_box_toggled"]
 [connection signal="item_selected" from="MarginContainer/VBoxContainer/Resolution" to="." method="_on_resolution_item_selected"]

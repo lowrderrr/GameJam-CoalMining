@@ -33,3 +33,4 @@ debug_color = Color(0.626833, 0.329038, 0.301208, 0.42)
 
 [connection signal="body_entered" from="ToTheMines" to="." method="_on_to_the_mines_body_entered"]
 [connection signal="body_entered" from="ToSpawn" to="." method="_on_to_spawn_body_entered"]
+[connection signal="body_exited" from="ToSpawn" to="." method="_on_to_spawn_body_exited"]

@@ -1,20 +1,38 @@
 extends CharacterBody2D
 
 
-const SPEED = 350.0
-const sprintSpeed = SPEED * 1.5
+var SPEED = 350.0 + GlobalVars.addedSpeed
+var sprintSpeed = SPEED * 1.5
 @export var inv: Inv
 @export var miningStrength = 1 #Mining power
+var thoughtBubble
 
 var item = load("res://Moises/inventory/items/coal.tres")
+var shop = false
 
 # 0 is up, 1 is down, 2 is right, 3 is left
 var characterDirection = 0
 @onready var sprite_2d = $Sprite2D
-var xIdle = false
-var yIdle = false
+
+var showMap = false
+
+func _ready() -> void:
+	thoughtBubble = $AnimatedSprite2D
 
 func _physics_process(delta):
+	
+	if thoughtBubble.frame == 3:
+		$CoalItem.visible = true
+	elif thoughtBubble.frame == 0:
+		$CoalItem.visible = false
+		
+	$PointLight2D.energy = 0.5 + GlobalVars.addedLight
+	if Input.is_action_just_pressed("Map") && showMap == false:
+		showMap = true
+		$Camera2D/Map.visible = true
+	elif Input.is_action_just_pressed("Map") && showMap:
+		showMap = false
+		$Camera2D/Map.visible = false
 
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
@@ -37,25 +55,21 @@ func _physics_process(delta):
 		characterDirection = 0
 	
 	if directionX:
-		xIdle = false
 		velocity.x = directionX * SPEED
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
-		xIdle = true
 
 	if directionY:
-		yIdle = false
 		velocity.y = directionY * SPEED
 	else:
 		velocity.y = move_toward(velocity.y, 0, SPEED)
-		yIdle = true
 		
 	if sprintActivate:
 		velocity = velocity.normalized() * sprintSpeed	
 	else:
 		velocity = velocity.normalized() * SPEED	
 	
-	if xIdle == false || yIdle == false:
+	if ((directionX || directionY) && !showMap && !shop):
 		move_and_slide()
 	
 	if !directionX && !directionY:
@@ -70,14 +84,12 @@ func _physics_process(delta):
 		elif (characterDirection == 3):
 			sprite_2d.animation = "Idle_Left"
 	
+func _on_lobby_shop(visible) -> void:
+	shop = visible
 
 
-func _on_area_2d_area_entered(area: Area2D) -> void:
-	print('collided')
-	add_item_to_inventory(item)
-	
-func add_item_to_inventory(item: InvItem):
-	print(inv.item)
-	inv.item.append(item)
-	print("Added item to inventory:", item.name)
-	print(inv.item)
+func _on_mines_or_spawn_area_thought_bubble(thinking) -> void:
+	if thinking:
+		thoughtBubble.play()
+	else:
+		thoughtBubble.stop()

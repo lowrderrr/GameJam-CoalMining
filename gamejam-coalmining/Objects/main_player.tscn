@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://b1dt63tvvif5b"]
+[gd_scene load_steps=35 format=3 uid="uid://b1dt63tvvif5b"]
 
 [ext_resource type="Script" path="res://Objects/main_player.gd" id="1_n17wd"]
 [ext_resource type="Texture2D" uid="uid://cxmvkd01vpy8f" path="res://Assets/CharacterSprite/walkingdown.png" id="2_v1ipq"]
@@ -6,6 +6,8 @@
 [ext_resource type="Texture2D" uid="uid://cvdfl1m4u46hf" path="res://Assets/CharacterSprite/Runningright.png" id="4_dqc1k"]
 [ext_resource type="Texture2D" uid="uid://cgfvtarefq3n3" path="res://Assets/CharacterSprite/walkingup.png" id="5_iugw0"]
 [ext_resource type="Texture2D" uid="uid://br3shodtoamkg" path="res://Assets/Light.png" id="6_bhe4k"]
+[ext_resource type="Texture2D" uid="uid://c0i4n4vo78wih" path="res://Assets/ThoughtBubble.png" id="7_4k0rm"]
+[ext_resource type="Texture2D" uid="uid://d0mbvv6sh7cel" path="res://Assets/CoalItem.png" id="8_swomn"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_a4oxa"]
 atlas = ExtResource("2_v1ipq")
@@ -193,6 +195,38 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xabeg"]
 size = Vector2(21, 25)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_2twpd"]
+atlas = ExtResource("7_4k0rm")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1srp8"]
+atlas = ExtResource("7_4k0rm")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v47i5"]
+atlas = ExtResource("7_4k0rm")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_2m0rq"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2twpd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1srp8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v47i5")
+}],
+"loop": true,
+"name": &"default",
+"speed": 2.0
+}]
+
 [node name="MainPlayer" type="CharacterBody2D"]
 z_index = 10
 texture_filter = 1
@@ -219,3 +253,15 @@ scale = Vector2(2.92188, 2.92326)
 energy = 0.5
 shadow_enabled = true
 texture = ExtResource("6_bhe4k")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+position = Vector2(53, -39)
+scale = Vector2(2.5, 2.5)
+sprite_frames = SubResource("SpriteFrames_2m0rq")
+
+[node name="CoalItem" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(57, -50)
+scale = Vector2(1.8, 1.8)
+texture = ExtResource("8_swomn")

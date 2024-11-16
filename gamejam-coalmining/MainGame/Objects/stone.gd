@@ -24,7 +24,7 @@ func _process(delta: float) -> void:
 func mine():
 	if miningaway && localPlayer != null:
 		if maxHP > 0:
-			maxHP -= localPlayer.miningStrength
+			maxHP -= localPlayer.miningStrength + GlobalVars.addedMining
 		if maxHP <= 0:
 			queue_free()
 

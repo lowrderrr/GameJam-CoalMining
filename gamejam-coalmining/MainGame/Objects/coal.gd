@@ -24,9 +24,10 @@ func _process(delta: float) -> void:
 func mine():
 	if miningaway && localPlayer != null:
 		if maxHP > 0:
-			maxHP -= localPlayer.miningStrength
+			maxHP -= localPlayer.miningStrength + GlobalVars.addedMining
 		if maxHP <= 0:
 			queue_free()
+			GlobalVars.coal_collected += 1
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	#TODO: This coal will break if the collision enters and reenters

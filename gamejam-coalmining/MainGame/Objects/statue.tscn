@@ -1,0 +1,44 @@
+[gd_scene load_steps=7 format=3 uid="uid://bb8ftr8o4haf"]
+
+[ext_resource type="Texture2D" uid="uid://bjce8f8xluoje" path="res://Assets/ExitStatue.png" id="1_hoc0u"]
+[ext_resource type="Texture2D" uid="uid://clk4eqk4ja8ss" path="res://Assets/PinkStatue.png" id="2_5yk0o"]
+[ext_resource type="Texture2D" uid="uid://br3shodtoamkg" path="res://Assets/Light.png" id="3_24uyv"]
+[ext_resource type="Texture2D" uid="uid://tlmgq0y7j7k3" path="res://Assets/GreenStatue.png" id="3_ln3si"]
+[ext_resource type="Texture2D" uid="uid://156bne2khdex" path="res://Assets/BlueStatue.png" id="4_3g4ee"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4tu38"]
+size = Vector2(39, 48)
+
+[node name="Statue" type="StaticBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+scale = Vector2(3, 3)
+texture = ExtResource("1_hoc0u")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+texture_filter = 1
+scale = Vector2(3, 3)
+texture = ExtResource("2_5yk0o")
+
+[node name="Sprite2D3" type="Sprite2D" parent="."]
+texture_filter = 1
+scale = Vector2(3, 3)
+texture = ExtResource("3_ln3si")
+
+[node name="Sprite2D4" type="Sprite2D" parent="."]
+texture_filter = 1
+scale = Vector2(3, 3)
+texture = ExtResource("4_3g4ee")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1.5, 0)
+shape = SubResource("RectangleShape2D_4tu38")
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+texture_filter = 1
+position = Vector2(0, 9.53674e-07)
+scale = Vector2(2.92188, 2.92326)
+energy = 0.5
+shadow_enabled = true
+texture = ExtResource("3_24uyv")
